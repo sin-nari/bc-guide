@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="부천형 고등학교 교육과정·학생평가 길라잡이 - 함께하는 배움으로, 부천의 미래를 열다">
+  <title>부천형 고등학교 교육과정·학생평가 길라잡이</title>
+
+  <!-- Google Fonts: Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- 메인 스타일시트 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       상단 고정 네비게이션
+       ════════════════════════════════════════════════ -->
+  <nav id="topnav">
+    <!-- 햄버거 메뉴 (모바일) -->
+    <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
+
+    <!-- 브랜드 -->
+    <div class="topnav-brand">
+      <div class="topnav-brand-logo">🎓</div>
+      <div class="topnav-brand-text">
+        <span class="topnav-brand-title">부천형 교육과정·학생평가 길라잡이</span>
+        <span class="topnav-brand-sub">함께하는 배움으로, 부천의 미래를 열다</span>
+      </div>
+    </div>
+
+    <!-- 상단 메뉴 -->
+    <div class="topnav-menu">
+      <a href="#" data-page="home">🏠 Home</a>
+      <a href="#" data-page="curriculum">📚 고등학교 교육과정</a>
+      <a href="#" data-page="evaluation">📊 중등 학생평가</a>
+      <a href="#" data-page="archive">📂 자료 아카이브</a>
+      <a href="#" data-page="story">📖 부천 교육 STORY</a>
+    </div>
+
+    <div class="topnav-spacer"></div>
+
+    <!-- 검색 -->
+    <div class="topnav-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="검색어를 입력하세요" autocomplete="off" aria-label="사이트 검색">
+      <!-- 검색 결과 드롭다운 -->
+      <div id="search-dropdown"></div>
+    </div>
+
+    <!-- 인쇄/PDF 버튼 -->
+    <button class="btn-print" onclick="printPage()">🖨️ 인쇄·PDF</button>
+  </nav>
+
+  <!-- 모바일 사이드바 오버레이 -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- ════════════════════════════════════════════════
+       좌측 사이드바
+       ════════════════════════════════════════════════ -->
+  <aside id="sidebar">
+    <!-- 사이드바 내비게이션 (JS로 동적 렌더링) -->
+    <nav id="sidebar-nav"></nav>
+
+    <!-- 사이드바 푸터 -->
+    <div class="sidebar-footer">
+      부천교육지원청 중등교육과<br>
+      교육과정·학생평가 담당<br>
+      <span style="display:block;margin-top:0.3rem">© 2025 Bucheon Office of Education</span>
+    </div>
+  </aside>
+
+  <!-- ════════════════════════════════════════════════
+       메인 콘텐츠 영역
+       ════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ──────────────────────────────────────────────
+         🏠 홈 페이지
+         ────────────────────────────────────────────── -->
+    <div class="page-view" id="page-home">
+
+      <!-- Hero 섹션 -->
+      <section class="hero">
+        <div class="hero-eyebrow">📍 부천교육지원청 중등교육과</div>
+        <h1 class="hero-title">함께하는 배움으로,<br>부천의 미래를 열다</h1>
+        <p class="hero-subtitle">부천형 고등학교 교육과정·학생평가 길라잡이</p>
+        <div class="hero-values">
+          <span class="hero-value-chip">이음</span>
+          <span class="hero-value-chip">나눔</span>
+          <span class="hero-value-chip">성장</span>
+          <span class="hero-value-chip">미래</span>
+        </div>
+      </section>
+
+      <!-- 공지사항 티커 -->
+      <div class="notice-ticker">
+        <span class="notice-ticker-label">📢 공지</span>
+        <div class="notice-ticker-track" id="notice-ticker-track">
+          <!-- JS 렌더링 -->
+        </div>
+      </div>
+
+      <!-- 홈 콘텐츠 -->
+      <div class="home-content">
+
+        <!-- 빠른 시작 -->
+        <div class="section-header">
+          <span class="section-title">⚡ 빠른 시작</span>
+          <span class="section-subtitle">자주 찾는 업무 바로가기</span>
+        </div>
+        <div class="quick-grid" id="quick-grid">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 시즌별 바로가기 -->
+        <div class="section-header">
+          <span class="section-title">📅 시즌별 바로가기</span>
+          <span class="section-subtitle">학사 일정에 맞는 업무 안내</span>
+        </div>
+        <div class="season-grid" id="season-grid">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 최신 공지사항 -->
+        <div class="section-header">
+          <span class="section-title">📢 최신 공지사항</span>
+          <a href="#" class="section-more" data-page="home">전체보기 →</a>
+        </div>
+        <div class="notice-table">
+          <div class="notice-table-header">
+            <span>제목</span>
+            <span></span>
+            <span>등록일</span>
+          </div>
+          <div id="notice-tbody">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+
+        <!-- 플랫폼 소개 -->
+        <div class="section-header">
+          <span class="section-title">ℹ️ 이 플랫폼은</span>
+        </div>
+        <div class="info-card" style="background: linear-gradient(135deg, var(--primary-light) 0%, #f8f9ff 100%); border-color: var(--primary-mid);">
+          <div class="info-card-body">
+            <p style="font-size:0.95rem;font-weight:600;color:var(--primary);margin-bottom:0.8rem">
+              단순 자료실이 아닙니다.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.6rem;font-size:0.85rem;color:var(--text-secondary)">
+              <div>📌 교육과정과 학생평가를 <strong>잇고</strong></div>
+              <div>📌 학교와 학교를 <strong>잇고</strong></div>
+              <div>📌 정책과 현장을 <strong>잇고</strong></div>
+              <div>📌 사람과 사람을 <strong>잇는</strong></div>
+            </div>
+            <p style="margin-top:0.8rem;font-size:0.88rem;color:var(--text-secondary)">
+              업무 수행형 길라잡이 플랫폼입니다.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /home-content -->
+    </div><!-- /page-home -->
+
+
+    <!-- ──────────────────────────────────────────────
+         📚 고등학교 교육과정 페이지
+         ────────────────────────────────────────────── -->
+    <div class="page-view" id="page-curriculum">
+      <div id="curriculum-content">
+        <!-- JS 렌더링 -->
+      </div>
+    </div>
+
+
+    <!-- ──────────────────────────────────────────────
+         📊 중등 학생평가 페이지
+         ────────────────────────────────────────────── -->
+    <div class="page-view" id="page-evaluation">
+      <div id="evaluation-content">
+        <!-- JS 렌더링 -->
+      </div>
+    </div>
+
+
+    <!-- ──────────────────────────────────────────────
+         📂 자료 아카이브 페이지
+         ────────────────────────────────────────────── -->
+    <div class="page-view" id="page-archive">
+      <div id="archive-content">
+        <!-- JS 렌더링 -->
+      </div>
+    </div>
+
+
+    <!-- ──────────────────────────────────────────────
+         📖 부천 교육 STORY 페이지
+         ────────────────────────────────────────────── -->
+    <div class="page-view" id="page-story">
+      <div id="story-content">
+        <!-- JS 렌더링 -->
+      </div>
+    </div>
+
+  </main><!-- /main-content -->
+
+
+  <!-- ════════════════════════════════════════════════
+       스크립트 로딩 순서 중요!
+       1. 데이터 (data.js)
+       2. 메인 스크립트 (script.js)
+       ════════════════════════════════════════════════ -->
+  <script src="data/data.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
