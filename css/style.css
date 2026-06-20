@@ -260,7 +260,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .section-more{margin-left:auto;font-size:.78rem;color:var(--primary);font-weight:500}
 .section-more:hover{text-decoration:underline}
 
-/* 빠른시작 — 4개 */
+/* 빠른시작 — 최대 8개, 4열 기준 */
 .quick-grid{
   display:grid;grid-template-columns:repeat(4,1fr);
   gap:.85rem;margin-bottom:2rem;
@@ -640,6 +640,48 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   border-radius:var(--radius-sm);transition:all var(--transition);width:fit-content;
 }
 .ext-link-btn:hover{background:var(--primary);color:#fff;text-decoration:none}
+
+/* 준비중 칩 그리드 */
+.coming-soon-grid{
+  display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;
+}
+.soon-chip{
+  display:inline-flex;align-items:center;gap:.3rem;
+  padding:.38rem .85rem;border-radius:20px;
+  border:1px dashed var(--border);
+  font-size:.8rem;color:var(--text-muted);
+  cursor:pointer;transition:all var(--transition);
+  background:var(--bg-white);
+}
+.soon-chip:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-light)}
+
+/* 사이드바 준비중 항목 */
+.sidebar-item-soon .item-label{opacity:.65}
+.sidebar-item-soon:hover .item-label{opacity:.9}
+.sidebar-soon{
+  font-size:.6rem;font-weight:600;color:rgba(255,255,255,.35);
+  margin-left:auto;white-space:nowrap;flex-shrink:0;
+}
+.sidebar-ext{
+  font-size:.7rem;color:rgba(255,255,255,.45);
+  margin-left:auto;flex-shrink:0;
+}
+
+/* 홈 외부 링크 미니 카드 */
+.ext-links-home-wrap{
+  background:var(--bg-white);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;
+}
+.ext-link-mini{
+  display:flex;align-items:center;gap:.7rem;
+  padding:.65rem 1.2rem;border-bottom:1px solid var(--border-light);
+  color:var(--text-primary);text-decoration:none;
+  transition:background var(--transition);
+}
+.ext-link-mini:last-child{border-bottom:none}
+.ext-link-mini:hover{background:var(--primary-light);text-decoration:none}
+.ext-link-mini-icon{font-size:1.1rem;flex-shrink:0;width:22px;text-align:center}
+.ext-link-mini-title{font-size:.86rem;font-weight:600;flex:1}
 
 /* 준비중 / STORY */
 .coming-soon-section{padding:3rem 2.5rem;text-align:center}
